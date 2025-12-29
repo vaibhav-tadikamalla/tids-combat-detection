@@ -44,14 +44,17 @@ Thumbs.db
 # Training artifacts (large files)
 *.h5
 *.keras
-*.tflite
 *.ckpt
 *.pb
-*.npz
-models/
 checkpoints/
 logs/
 *.log
+
+# Allow specific trained model files
+!impact_classifier.tflite
+!norm.npz
+!models/impact_classifier.tflite
+!models/norm.npz
 
 # Data
 *.csv
