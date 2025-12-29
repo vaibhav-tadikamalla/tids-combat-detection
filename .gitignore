@@ -1,0 +1,74 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Training artifacts (large files)
+*.h5
+*.keras
+*.tflite
+*.ckpt
+*.pb
+*.npz
+models/
+checkpoints/
+logs/
+*.log
+
+# Data
+*.csv
+*.json
+data/
+dataset/
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+test.ipynb
+create_notebook.py
+validate.py
+TRAINING_CODE_FIXED.txt
+
+# Keep important files
+!README.md
+!requirements.txt
+!.gitignore

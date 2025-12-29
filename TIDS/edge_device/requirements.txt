@@ -1,0 +1,31 @@
+# Core ML
+tensorflow==2.13.0
+tflite-runtime==2.13.0
+numpy==1.24.3
+scipy==1.11.1
+
+# Sensors
+smbus2==0.4.2
+adafruit-circuitpython-lsm9ds1==2.1.18
+adafruit-circuitpython-gps==3.9.2
+pyserial==3.5
+
+# Networking
+aiohttp==3.8.5
+websockets==11.0.3
+
+# Security
+cryptography==41.0.3
+pycryptodome==3.18.0
+
+# Audio processing
+pyaudio==0.2.13
+SpeechRecognition==3.10.0
+pyttsx3==2.90
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.21.1
+
+# Utilities
+pyyaml==6.0.1
+python-dotenv==1.0.0
+h5py==3.9.0

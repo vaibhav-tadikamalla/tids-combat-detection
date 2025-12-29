@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: guardian_shield
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: changeme
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    ports:
+      - "8443:8443"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://admin:changeme@postgres:5432/guardian_shield
+
+  dashboard:
+    build: ./dashboard
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

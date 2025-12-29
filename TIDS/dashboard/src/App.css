@@ -1,0 +1,92 @@
+.command-center {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  background: #16213e;
+  padding: 20px;
+  border-bottom: 2px solid #0f3460;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.stats-bar {
+  display: flex;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  background: #0f3460;
+  border-radius: 8px;
+}
+
+.stat.critical {
+  background: #c44569;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  height: calc(100vh - 120px);
+}
+
+.map-container {
+  position: relative;
+}
+
+.side-panel {
+  background: #16213e;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.alert-panel {
+  margin-bottom: 30px;
+}
+
+.alert-item {
+  background: #0f3460;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.soldier-card {
+  background: #0f3460;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.soldier-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00ff00;
+}
+
+.soldier-icon.critical {
+  background: #ff0000;
+}
