@@ -8,12 +8,15 @@
 
 **TIDS (Tactical Impact Detection System)** is an AI-powered combat impact classification system designed for military applications. It uses deep learning to analyze sensor data from wearable devices and classify combat impacts in real-time with **95.46% accuracy**.
 
+**🤗 Try it now**: [Hugging Face Model](https://huggingface.co/tadikamallavaibhav/GuardianShieldCombatDetector)
+
 ### Key Features
 - ✅ **6 Impact Classes**: blast, gunshot, artillery, vehicle_crash, fall, normal
 - ✅ **Severity Assessment**: 0-1 injury severity score
 - ✅ **95.46% Test Accuracy**: Trained on 60,000 synthetic samples
 - ✅ **Real-time Processing**: TensorFlow Lite optimized
 - ✅ **Multi-sensor Fusion**: IMU (accelerometer, gyroscope, magnetometer) + vitals (HR, SpO2, breathing, temp)
+- ✅ **API Access**: Use via Hugging Face Inference API (no download needed)
 
 ---
 
@@ -117,15 +120,53 @@ python autonomous_training.py
 
 ## 🔥 Using the Trained Model
 
-### Download Pre-trained Model
+### 🎯 Hugging Face Inference API (Recommended)
 
-**Model Files** (Total: ~35 MB)
-- `impact_classifier.tflite` - TensorFlow Lite model
-- `norm.npz` - Normalization parameters
+Use the pre-trained model **without downloading** via Hugging Face Inference API:
 
-📥 **Download from**: [GitHub Releases](https://github.com/YOUR_USERNAME/military_project/releases) or [Hugging Face](https://huggingface.co/YOUR_USERNAME/guardian-shield)
+**Model**: [tadikamallavaibhav/GuardianShieldCombatDetector](https://huggingface.co/tadikamallavaibhav/GuardianShieldCombatDetector)
 
-### Inference Example
+```bash
+pip install huggingface_hub
+```
+
+```python
+from huggingface_hub import InferenceClient
+import numpy as np
+
+# Initialize client
+client = InferenceClient(model="tadikamallavaibhav/GuardianShieldCombatDetector")
+
+# Prepare sensor data (200 timesteps, 13 channels)
+sensor_data = np.random.randn(200, 13).astype(np.float32)
+
+# Get predictions (model hosted on HF servers)
+result = client.predict(sensor_data)
+
+print(f"Impact: {result['impact_type']} | Severity: {result['severity']:.2f}")
+```
+
+**Benefits:**
+- ✅ No model download needed (zero setup)
+- ✅ Always uses latest model version
+- ✅ Hugging Face handles infrastructure
+- ✅ Fast inference with HF accelerators
+
+### 📥 For Research/Offline Use
+
+To access the model files for research or offline deployment, request access:
+
+1. Visit [Model Page](https://huggingface.co/tadikamallavaibhav/GuardianShieldCombatDetector)
+2. Click **"Request Access"**
+3. Approval typically granted within 24 hours
+
+Once approved:
+
+```bash
+huggingface-cli download tadikamallavaibhav/GuardianShieldCombatDetector
+```
+
+### Local Inference (After Download)
 
 ```python
 import tensorflow as tf

@@ -1,0 +1,39 @@
+# 🤗 Hugging Face Upload - Quick Steps
+
+## You're logged in as: tadikamallavaibhav
+
+## Step 1: Create Repository on Hugging Face Website
+
+1. **Go to**: https://huggingface.co/new
+2. **Fill in**:
+   - Owner: `tadikamallavaibhav` (your account)
+   - Model name: `guardian-shield-combat-detector`
+   - License: `MIT`
+   - Make it: **Public** ✓
+3. Click **"Create model"**
+
+## Step 2: Upload Files
+
+Once the repo is created, you have 2 options:
+
+### Option A: Upload via Website (Easiest - 2 minutes)
+
+1. Go to your new repo: https://huggingface.co/tadikamallavaibhav/guardian-shield-combat-detector
+2. Click **"Files and versions"** tab
+3. Click **"Add file"** → **"Upload files"**
+4. Drag and drop these 3 files:
+   - `models/impact_classifier.tflite`
+   - `models/norm.npz`
+   - `HF_README.md` (rename it to `README.md` during upload)
+5. Click **"Commit changes to main"**
+
+### Option B: Upload via Python Script
+
+Run this after creating the repo on the website:
+
+```powershell
+cd 'C:\Users\Vaibhav Tadikamalla\Desktop\military_project'
+python upload_hf_simple.py
+```
+
+I'll create that script now...
